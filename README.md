@@ -1,33 +1,71 @@
 # IT Support & System Administration Labs
 
-Hands-on portfolio focused on practical skills for entry-level IT Support, Help Desk, System Administration and Infrastructure roles.
+Hands-on portfolio focused on practical skills for entry-level **IT Support, Help Desk, System Administration and Infrastructure** roles, with a progressive path toward **Cybersecurity and Security Operations**.
 
-The goal of this repository is to build realistic lab environments, troubleshoot common IT issues, document the reasoning process, and progressively integrate infrastructure security skills.
+This repository documents realistic lab environments, troubleshooting workflows, system administration tasks and infrastructure security exercises.
 
-## Skills
+## About This Repository
+
+The purpose of this project is to turn theoretical knowledge into practical, documented experience.
+
+Each lab is built around a realistic technical scenario and includes:
+
+- Environment setup
+- Configuration steps
+- Troubleshooting methodology
+- Commands and tools used
+- Root-cause analysis
+- Verification
+- Screenshots where useful
+- Key takeaways
+
+The main focus is currently **System Administration and IT Infrastructure**, with security-oriented labs progressively added on top of the same environment.
+
+## Core Skills
+
+### System Administration
 
 - Windows 10/11 Administration
 - Windows Server
 - Active Directory Domain Services
+- Users, Groups and Organizational Units
 - Group Policy
 - DNS & DHCP
-- TCP/IP Networking
-- Network Troubleshooting
+- File Server Administration
+- NTFS & SMB Permissions
 - PowerShell
 - Linux Administration
-- File Server & NTFS Permissions
 - Virtualization
 - Backup & Disaster Recovery
-- Wireshark & Packet Analysis
-- IT Support & Ticketing
+
+### Networking & Troubleshooting
+
+- TCP/IP
+- Subnetting
+- DNS
+- DHCP
+- Routing fundamentals
+- Network troubleshooting
+- Wireshark
+- Packet analysis
+
+### Security
+
 - Infrastructure Hardening
-- Security Monitoring
+- Vulnerability Assessment
+- Windows Event Logs
+- Sysmon
+- Wazuh
+- SIEM fundamentals
+- Incident Investigation
 
 ## Lab Roadmap
 
+### IT Support & System Administration
+
 | # | Lab | Technologies | Status |
 |---|---|---|---|
-| 01 | Windows Network Troubleshooting | Windows, TCP/IP, DNS, PowerShell | 🚧 In Progress |
+| 01 | [Windows Network Troubleshooting](windows/network-troubleshooting/) | Windows, TCP/IP, DNS, PowerShell | 🚧 In Progress |
 | 02 | Active Directory Deployment | Windows Server, AD DS, DNS, Windows 11 | ⏳ Planned |
 | 03 | Users, Groups, OU & Group Policy | Active Directory, GPO, PowerShell | ⏳ Planned |
 | 04 | File Server & Permissions | SMB, NTFS, Active Directory Groups | ⏳ Planned |
@@ -37,37 +75,94 @@ The goal of this repository is to build realistic lab environments, troubleshoot
 | 08 | Wireshark Packet Analysis | Wireshark, TCP/IP, DNS, HTTP/S | ⏳ Planned |
 | 09 | Help Desk & Ticketing | GLPI, Troubleshooting, Documentation | ⏳ Planned |
 | 10 | Backup & Disaster Recovery | Veeam, Backup, Restore | ⏳ Planned |
+
+### Security & Monitoring
+
+| # | Lab | Technologies | Status |
+|---|---|---|---|
 | 11 | Vulnerability Assessment & Hardening | Nmap, Windows/Linux Security | ⏳ Planned |
 | 12 | Security Monitoring Lab | Wazuh, Sysmon, Windows Event Logs | ⏳ Planned |
 | 13 | Incident Investigation | SIEM, Logs, IOC Analysis, Incident Response | ⏳ Planned |
 
 ## Lab Methodology
 
-Each project follows a consistent workflow:
+Each project follows the same workflow:
 
 1. Define a realistic IT scenario.
 2. Build or configure the required environment.
-3. Reproduce the issue or requirement.
+3. Reproduce the issue or technical requirement.
 4. Investigate using appropriate tools and commands.
-5. Implement the solution.
-6. Verify the result.
-7. Document troubleshooting decisions and lessons learned.
+5. Identify the root cause.
+6. Implement the solution.
+7. Verify that the issue is resolved.
+8. Document the process and lessons learned.
 
-## Repository Structure
+## Planned Lab Environment
 
-Each lab is documented with:
+The infrastructure will progressively include:
 
-- Scenario and objectives
-- Environment
-- Tools and commands
-- Implementation or investigation steps
-- Troubleshooting
-- Verification
-- Screenshots where useful
-- Key takeaways
+```text
+Virtualization Host
+│
+├── Windows Server
+│   ├── Active Directory Domain Services
+│   ├── DNS
+│   ├── DHCP
+│   └── File Services
+│
+├── Windows 11 Client
+│   └── Domain Joined Workstation
+│
+└── Linux Server
+    ├── SSH
+    ├── Network Services
+    └── Security / Monitoring Tools
+```
+
+Later labs will add:
+
+```text
+Sysmon
+   ↓
+Windows Event Logs
+   ↓
+Wazuh / SIEM
+   ↓
+Detection
+   ↓
+Investigation
+   ↓
+Incident Report
+```
 
 ## Current Focus
 
-Currently working on Windows networking and troubleshooting before moving into Windows Server and Active Directory administration.
+Current lab:
 
-The long-term objective is to build practical infrastructure administration skills and progressively connect them with security monitoring and incident investigation.
+**Lab 01 — Windows Network Troubleshooting**
+
+The current objective is to build a structured troubleshooting methodology for Windows network issues before moving into **Windows Server and Active Directory administration**.
+
+## Learning Path
+
+The repository follows this progression:
+
+```text
+Networking & Troubleshooting
+          ↓
+Windows / Linux Administration
+          ↓
+Windows Server & Active Directory
+          ↓
+PowerShell & Automation
+          ↓
+Backup / Infrastructure Management
+          ↓
+Hardening & Vulnerability Assessment
+          ↓
+Security Monitoring
+          ↓
+Incident Investigation
+```
+
+This progression is designed to build strong infrastructure fundamentals first and then apply them to defensive cybersecurity scenarios.
