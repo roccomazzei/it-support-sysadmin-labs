@@ -42,9 +42,14 @@ The main focus is currently **System Administration and IT Infrastructure**, wit
 
 - TCP/IP
 - Subnetting
+- VLANs
+- 802.1Q Trunking
+- Routing fundamentals
+- NAT
+- ACLs
 - DNS
 - DHCP
-- Routing fundamentals
+- Cisco Packet Tracer
 - Network troubleshooting
 - Wireshark
 - Packet analysis
@@ -58,6 +63,12 @@ The main focus is currently **System Administration and IT Infrastructure**, wit
 - Wazuh
 - SIEM fundamentals
 - Incident Investigation
+
+## Networking Foundation Project
+
+| Project | Technologies | Status |
+|---|---|---|
+| [Cisco Packet Tracer Networking Capstone](networking/cisco-packet-tracer-capstone/) | Cisco IOS, VLANs, Trunking, Routing, NAT, ACLs | 🚧 In Progress |
 
 ## Lab Roadmap
 
@@ -137,11 +148,12 @@ Incident Report
 
 ## Current Focus
 
-Current lab:
+Current projects:
 
-**Lab 01 — Windows Network Troubleshooting**
+1. **Cisco Packet Tracer Networking Capstone**
+2. **Lab 01 — Windows Network Troubleshooting**
 
-The current objective is to build a structured troubleshooting methodology for Windows network issues before moving into **Windows Server and Active Directory administration**.
+The immediate objective is to consolidate networking skills through a documented Packet Tracer project and a structured Windows troubleshooting lab before moving into **Windows Server and Active Directory administration**.
 
 ## Learning Path
 
