@@ -45,6 +45,8 @@ Subnet mask: `255.255.255.224`
 
 ## Topology
 
+![Packet Tracer topology](screenshots/topology.png)
+
 ```text
                       R1
                       |
@@ -75,12 +77,8 @@ cisco-packet-tracer-capstone/
 │   └── Switch-running-config.txt
 │
 └── screenshots/
-    ├── 01-topology.png
-    ├── 02-vlan-brief.png
-    ├── 03-trunk.png
-    ├── 04-router-interfaces.png
-    ├── 05-routing-table.png
-    └── 06-intervlan-ping.png
+    ├── topology.png
+    └── ping.png
 ```
 
 ## Implementation
@@ -96,8 +94,8 @@ cisco-packet-tracer-capstone/
 - [x] Configure end-device IP settings and default gateways
 - [x] Verify connectivity between VLANs
 - [x] Export router and switch configurations
-- [ ] Add screenshots
-- [ ] Add Packet Tracer project file
+- [x] Add screenshots
+- [x] Add Packet Tracer project file
 - [ ] Complete troubleshooting exercise
 - [ ] Document final lessons learned
 
@@ -113,6 +111,8 @@ ping
 ```
 
 ## Verification
+
+![Successful inter-VLAN ping](screenshots/ping.png)
 
 Inter-VLAN connectivity was successfully tested from a host in the 192.168.50.0/27 subnet to hosts in the 192.168.50.32/27 and 192.168.50.64/27 subnets, with 0% packet loss.
 
