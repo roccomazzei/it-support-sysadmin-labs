@@ -48,21 +48,19 @@ Subnet mask: `255.255.255.224`
 ![Packet Tracer topology](screenshots/topology.png)
 
 ```text
-                      R1
+                    Router
                       |
                     TRUNK
                       |
-                     SW1
+                    Switch
             __________|__________
            |          |          |
         VLAN 10    VLAN 20    VLAN 30
            IT       ADMIN       SALES
-         PC1/PC2    PC3/PC4    PC5/PC6
+         PC0/PC1    PC2/PC3    PC4/PC5
 ```
 
 ## Repository Files
-
-The completed project should contain:
 
 ```text
 cisco-packet-tracer-capstone/
@@ -96,8 +94,8 @@ cisco-packet-tracer-capstone/
 - [x] Export router and switch configurations
 - [x] Add screenshots
 - [x] Add Packet Tracer project file
-- [ ] Complete troubleshooting exercise
-- [ ] Document final lessons learned
+- [x] Complete troubleshooting exercise
+- [x] Document final lessons learned
 
 ## Verification Commands
 
@@ -114,30 +112,71 @@ ping
 
 ![Successful inter-VLAN ping](screenshots/ping.png)
 
-Inter-VLAN connectivity was successfully tested from a host in the 192.168.50.0/27 subnet to hosts in the 192.168.50.32/27 and 192.168.50.64/27 subnets, with 0% packet loss.
+Inter-VLAN connectivity was successfully tested from a host in the `192.168.50.0/27` subnet to hosts in the `192.168.50.32/27` and `192.168.50.64/27` subnets with 0% packet loss.
 
-The network is considered successfully configured when:
+The final verification confirmed that:
 
 - Devices in the same VLAN can communicate.
-- Devices in different VLANs can communicate through R1.
+- Devices in different VLANs can communicate through the router.
 - Each PC uses the correct default gateway.
-- SW1 shows VLANs 10, 20 and 30 with the expected access ports.
+- The switch has the expected access-port assignments for VLANs 10, 20 and 30.
 - The switch-to-router link operates as an 802.1Q trunk.
-- R1 shows the three configured subinterfaces and connected /27 networks.
+- The router has three active subinterfaces for the three /27 networks.
 
-## Troubleshooting Scenario
+## Troubleshooting Exercise
 
-A deliberate configuration issue will be introduced in the next phase.
+A deliberate Layer 2 configuration error was introduced on a SALES workstation port.
 
-The investigation will document:
+### Symptom
 
-- Symptom
-- Initial hypothesis
-- Commands used
-- Root cause
-- Corrective action
-- Final verification
+The workstation could no longer reach its default gateway or hosts outside its expected VLAN.
+
+### Fault Introduced
+
+The access port connected to the SALES workstation was intentionally assigned to VLAN 20 instead of VLAN 30.
+
+### Investigation
+
+The troubleshooting process followed a layered approach:
+
+1. Tested connectivity from the affected workstation.
+2. Verified whether another host in VLAN 30 could reach the gateway.
+3. Verified same-VLAN communication.
+4. Inspected VLAN membership with:
+
+```text
+show vlan brief
+```
+
+This isolated the issue to the switch access-port VLAN assignment rather than the router or trunk.
+
+### Root Cause
+
+The workstation's switch port was assigned to the wrong VLAN.
+
+The host still had an IP address and default gateway belonging to the `192.168.50.64/27` SALES subnet, but its Layer 2 traffic was being placed in VLAN 20.
+
+### Corrective Action
+
+The affected switch port was reassigned to VLAN 30.
+
+After restoring the correct VLAN membership, connectivity was re-tested. Packet Tracer briefly required additional time/traffic before gateway reachability was restored, after which same-VLAN and inter-VLAN communication both succeeded.
+
+### Final Verification
+
+- PC4 -> PC5: successful
+- PC5 -> VLAN 30 gateway: successful
+- PC4 -> VLAN 30 gateway: successful after restoration
+- Inter-VLAN communication: successful
 
 ## What I Learned
 
-To be completed after the troubleshooting phase.
+- A VLAN separates a Layer 2 broadcast domain even when devices are connected to the same physical switch.
+- Access ports must belong to the VLAN that matches the host's intended IP subnet.
+- An 802.1Q trunk can carry traffic for multiple VLANs over one physical link.
+- Router-on-a-stick uses one physical router interface with multiple logical subinterfaces, one for each VLAN.
+- The physical router interface does not need an IP address when Layer 3 addressing is configured on the VLAN subinterfaces.
+- Each router subinterface acts as the default gateway for its VLAN.
+- `show vlan brief`, `show interfaces trunk`, `show ip interface brief` and `show ip route` are useful for isolating Layer 2 and Layer 3 faults.
+- Testing connectivity in stages helps identify whether a problem is local to the host, inside the VLAN, on the trunk, or at the router.
+- A working configuration should always be verified after a corrective change instead of assuming that the fix was successful.
