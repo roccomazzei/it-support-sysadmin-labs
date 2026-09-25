@@ -71,8 +71,8 @@ cisco-packet-tracer-capstone/
 │   └── small-business-network.pkt
 │
 ├── configs/
-│   ├── R1-running-config.txt
-│   └── SW1-running-config.txt
+│   ├── Router-running-config.txt
+│   └── Switch-running-config.txt
 │
 └── screenshots/
     ├── 01-topology.png
@@ -95,7 +95,7 @@ cisco-packet-tracer-capstone/
 - [x] Configure inter-VLAN routing
 - [x] Configure end-device IP settings and default gateways
 - [x] Verify connectivity between VLANs
-- [ ] Export router and switch configurations
+- [x] Export router and switch configurations
 - [ ] Add screenshots
 - [ ] Add Packet Tracer project file
 - [ ] Complete troubleshooting exercise
@@ -113,6 +113,8 @@ ping
 ```
 
 ## Verification
+
+Inter-VLAN connectivity was successfully tested from a host in the 192.168.50.0/27 subnet to hosts in the 192.168.50.32/27 and 192.168.50.64/27 subnets, with 0% packet loss.
 
 The network is considered successfully configured when:
 
