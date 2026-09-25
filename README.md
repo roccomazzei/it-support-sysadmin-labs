@@ -1,183 +1,241 @@
-# IT Support & System Administration Labs
+# IT Systems Administration Labs
 
-Hands-on portfolio focused on practical skills for entry-level **IT Support, Help Desk, System Administration and Infrastructure** roles, with a progressive path toward **Cybersecurity and Security Operations**.
+Hands-on portfolio documenting practical **System Administration, IT Infrastructure, Networking and Cloud** skills, with a progressive extension toward **Cybersecurity and Security Operations**.
 
-This repository documents realistic lab environments, troubleshooting workflows, system administration tasks and infrastructure security exercises.
+The learning roadmap is aligned with the technical modules of the Udemy course **“Sistemista e Sistemistica: la Masterclass! 44 Ore [NEW 2026]”**, while every portfolio project is implemented, tested and documented independently.
 
-## About This Repository
+## Current Progress
 
-The purpose of this project is to turn theoretical knowledge into practical, documented experience.
+| Module | Area | Status |
+|---|---|---|
+| 01 | Networking | 🚧 In Progress |
+| 02 | Linux | ⏳ Planned |
+| 03 | PowerShell | ⏳ Planned |
+| 04 | Infrastructure & Backup | ⏳ Planned |
+| 05 | Virtualization | ⏳ Planned |
+| 06 | Windows Server & Active Directory | ⏳ Planned |
+| 07 | Windows 11 Administration | ⏳ Planned |
+| 08 | Microsoft Exchange 2019 | ⏳ Planned |
+| 09 | Amazon AWS | ⏳ Planned |
+| 10 | Microsoft Azure | ⏳ Planned |
 
-Each lab is built around a realistic technical scenario and includes:
+## Portfolio Roadmap
 
-- Environment setup
-- Configuration steps
-- Troubleshooting methodology
-- Commands and tools used
-- Root-cause analysis
-- Verification
-- Screenshots where useful
-- Key takeaways
+### 01 — Networking
 
-The main focus is currently **System Administration and IT Infrastructure**, with security-oriented labs progressively added on top of the same environment.
+Course topics include Cisco Packet Tracer, IPv4 addressing, subnetting, switching, VLANs, 802.1Q trunks, routing, NAT, ACLs and network troubleshooting.
 
-## Core Skills
+Projects:
 
-### System Administration
+- [Cisco Packet Tracer Networking Capstone](01-networking/cisco-packet-tracer-capstone/) — ✅ Completed
+- [Windows Network Troubleshooting](01-networking/windows-network-troubleshooting/) — 🚧 In Progress
+- Multi-switch VLAN and trunking exercises — Practice
 
-- Windows 10/11 Administration
-- Windows Server
+### 02 — Linux
+
+Planned hands-on areas:
+
+- Linux installation and virtual lab setup
+- Shell scripting fundamentals
+- Users, files and permissions
+- IP configuration and network troubleshooting
+- `ip`, `netstat`, `dig`, `tcpdump`
+- Nmap and Wireshark
+- Linux firewall fundamentals
+- Security monitoring fundamentals
+
+### 03 — PowerShell
+
+Planned hands-on areas:
+
+- Filesystem and administration commands
+- Variables, conditions, loops and arrays
+- Network diagnostics
+- Ping and ARP automation
+- DNS checks
+- Port checks
+- Hashing
+- Administrative scripting
+
+Portfolio target: **PowerShell Admin Toolkit**.
+
+### 04 — Infrastructure & Backup
+
+Planned hands-on areas:
+
+- Network and server administration
+- File services
+- DNS / IIS / FTP
+- Firewall and VPN fundamentals
+- Infrastructure migration concepts
+- Veeam backup repositories and jobs
+- VM and file restore
+- Active Directory recovery
+- Backup validation and disaster recovery
+
+Portfolio target: **Backup & Disaster Recovery Lab**.
+
+### 05 — Virtualization
+
+Planned hands-on areas:
+
+- Oracle VirtualBox
+- Hyper-V
+- VMware / ESXi
+- Virtual networking
+- Virtual switches
+- Storage
+- VLANs in virtual environments
+- VM lifecycle and snapshots
+
+Virtualization will also provide the infrastructure for later Windows Server and security labs.
+
+### 06 — Windows Server & Active Directory
+
+This is the main enterprise administration block of the portfolio.
+
+Planned labs:
+
+- Windows Server deployment
 - Active Directory Domain Services
-- Users, Groups and Organizational Units
+- Windows client domain join
+- Users, groups and Organizational Units
+- Share and NTFS permissions
 - Group Policy
-- DNS & DHCP
-- File Server Administration
-- NTFS & SMB Permissions
-- PowerShell
-- Linux Administration
-- Virtualization
-- Backup & Disaster Recovery
-
-### Networking & Troubleshooting
-
-- TCP/IP
-- Subnetting
-- VLANs
-- 802.1Q Trunking
-- Routing fundamentals
-- NAT
-- ACLs
-- DNS
+- Home folders and mapped drives
+- FSMO roles
+- Secondary Domain Controller
+- DNS zones
+- Active Directory Sites and Services
+- Windows Admin Center
+- Domain trusts
+- IIS and FTP
+- Certification Authority
+- Shadow Copies
+- DFS
+- Remote Desktop Services
 - DHCP
-- Cisco Packet Tracer
-- Network troubleshooting
-- Wireshark
-- Packet analysis
+- WDS
+- WSUS
+- Hyper-V
+- RADIUS / AD authentication
 
-### Security
+### 07 — Windows 11 Administration
 
-- Infrastructure Hardening
-- Vulnerability Assessment
+Planned hands-on areas:
+
+- Disk and update management
+- User Account Control
+- Microsoft Defender
+- Windows Firewall
+- Restore points
+- BitLocker
+- LAN configuration
+- File sharing and users
+- Local policy
+- Windows Registry
+- Performance Monitor
+
+Portfolio target: **Windows Endpoint Administration & Hardening Lab**.
+
+### 08 — Microsoft Exchange 2019
+
+Planned hands-on areas:
+
+- Exchange lab deployment
+- DNS integration
+- ECP administration
+- Mail flow
+- Send connectors
+- Mailbox databases
+- Virtual directories
+- SSL certificates
+- SPF, DKIM and DMARC
+- User and shared mailboxes
+- Mailbox troubleshooting
+
+### 09 — Amazon AWS
+
+Planned hands-on areas:
+
+- AWS CLI
+- IAM and MFA
+- EC2
+- AMIs
+- EBS
+- VPC
+- Security Groups
+- Linux and Windows cloud instances
+- Auto Scaling
+- ELB / ALB / NLB
+- ECS and Docker
+- Elastic Beanstalk
+- Lambda
+
+Portfolio target: **AWS Infrastructure Lab**.
+
+### 10 — Microsoft Azure
+
+Planned hands-on areas:
+
+- Azure infrastructure
+- Virtual machines
+- Virtual networking
+- Cloud administration
+- Backup
+- Security fundamentals
+
+Portfolio target: **Azure Infrastructure Lab**.
+
+## Beyond the Course — Security Extension
+
+After the core infrastructure modules, the same lab environment will be extended with:
+
+- Vulnerability assessment and hardening
 - Windows Event Logs
 - Sysmon
 - Wazuh
 - SIEM fundamentals
-- Incident Investigation
+- Detection engineering basics
+- Incident investigation and reporting
 
-## Networking Foundation Project
-
-| Project | Technologies | Status |
-|---|---|---|
-| [Cisco Packet Tracer Networking Capstone](networking/cisco-packet-tracer-capstone/) | Cisco IOS, VLANs, 802.1Q, Router-on-a-stick, Inter-VLAN Routing | ✅ Completed |
-
-## Lab Roadmap
-
-### IT Support & System Administration
-
-| # | Lab | Technologies | Status |
-|---|---|---|---|
-| 01 | [Windows Network Troubleshooting](windows/network-troubleshooting/) | Windows, TCP/IP, DNS, PowerShell | 🚧 In Progress |
-| 02 | Active Directory Deployment | Windows Server, AD DS, DNS, Windows 11 | ⏳ Planned |
-| 03 | Users, Groups, OU & Group Policy | Active Directory, GPO, PowerShell | ⏳ Planned |
-| 04 | File Server & Permissions | SMB, NTFS, Active Directory Groups | ⏳ Planned |
-| 05 | DNS & DHCP Administration | Windows Server, DNS, DHCP | ⏳ Planned |
-| 06 | PowerShell Administration | PowerShell, Windows Administration | ⏳ Planned |
-| 07 | Linux Server Administration | Linux, SSH, systemd, networking | ⏳ Planned |
-| 08 | Wireshark Packet Analysis | Wireshark, TCP/IP, DNS, HTTP/S | ⏳ Planned |
-| 09 | Help Desk & Ticketing | GLPI, Troubleshooting, Documentation | ⏳ Planned |
-| 10 | Backup & Disaster Recovery | Veeam, Backup, Restore | ⏳ Planned |
-
-### Security & Monitoring
-
-| # | Lab | Technologies | Status |
-|---|---|---|---|
-| 11 | Vulnerability Assessment & Hardening | Nmap, Windows/Linux Security | ⏳ Planned |
-| 12 | Security Monitoring Lab | Wazuh, Sysmon, Windows Event Logs | ⏳ Planned |
-| 13 | Incident Investigation | SIEM, Logs, IOC Analysis, Incident Response | ⏳ Planned |
+This connects the System Administration portfolio with the longer-term Cybersecurity path.
 
 ## Lab Methodology
 
-Each project follows the same workflow:
+Each portfolio project follows the same workflow:
 
-1. Define a realistic IT scenario.
-2. Build or configure the required environment.
-3. Reproduce the issue or technical requirement.
-4. Investigate using appropriate tools and commands.
-5. Identify the root cause.
-6. Implement the solution.
-7. Verify that the issue is resolved.
-8. Document the process and lessons learned.
+1. Define a realistic technical scenario.
+2. Build the environment.
+3. Configure the required services.
+4. Verify expected behavior.
+5. Introduce or encounter a realistic fault.
+6. Troubleshoot systematically.
+7. Correct the root cause.
+8. Verify the fix.
+9. Document configuration, evidence and lessons learned.
 
-## Planned Lab Environment
-
-The infrastructure will progressively include:
-
-```text
-Virtualization Host
-│
-├── Windows Server
-│   ├── Active Directory Domain Services
-│   ├── DNS
-│   ├── DHCP
-│   └── File Services
-│
-├── Windows 11 Client
-│   └── Domain Joined Workstation
-│
-└── Linux Server
-    ├── SSH
-    ├── Network Services
-    └── Security / Monitoring Tools
-```
-
-Later labs will add:
+## Repository Structure
 
 ```text
-Sysmon
-   ↓
-Windows Event Logs
-   ↓
-Wazuh / SIEM
-   ↓
-Detection
-   ↓
-Investigation
-   ↓
-Incident Report
+it-systems-administration-labs/
+│
+├── 01-networking/
+├── 02-linux/
+├── 03-powershell/
+├── 04-infrastructure-backup/
+├── 05-virtualization/
+├── 06-windows-server-active-directory/
+├── 07-windows-11/
+├── 08-exchange-2019/
+├── 09-aws/
+└── 10-azure/
 ```
+
+Folders are populated as the corresponding hands-on work is completed. The repository is intended to show practical capability rather than simply mirror course lessons.
 
 ## Current Focus
 
-Completed foundation project:
+Networking fundamentals have been completed at course level.
 
-- **Cisco Packet Tracer Networking Capstone** ✅
-
-Current project:
-
-- **Lab 01 — Windows Network Troubleshooting**
-
-The immediate objective is to complete structured Windows network troubleshooting before moving into **Windows Server and Active Directory administration**.
-
-## Learning Path
-
-The repository follows this progression:
-
-```text
-Networking & Troubleshooting
-          ↓
-Windows / Linux Administration
-          ↓
-Windows Server & Active Directory
-          ↓
-PowerShell & Automation
-          ↓
-Backup / Infrastructure Management
-          ↓
-Hardening & Vulnerability Assessment
-          ↓
-Security Monitoring
-          ↓
-Incident Investigation
-```
-
-This progression is designed to build strong infrastructure fundamentals first and then apply them to defensive cybersecurity scenarios.
+The **Cisco Packet Tracer Networking Capstone** is complete. The next portfolio task is **Windows Network Troubleshooting**, followed by the Linux module.
