@@ -4,22 +4,21 @@
 
 Design, configure and verify a small business network in Cisco Packet Tracer using the networking concepts covered during the course.
 
-This project is intended to consolidate networking fundamentals before moving into Windows Server, Active Directory and infrastructure administration labs.
+This project consolidates networking fundamentals before moving into Windows Server, Active Directory and infrastructure administration labs.
 
 ## Scenario
 
-A small company has multiple departments that must be logically separated while still being able to communicate through controlled routing.
+A small company has three departments that must be logically separated while still being able to communicate through inter-VLAN routing.
 
-The network should provide:
+The network provides:
 
-- Separate VLANs for different departments
-- Correct IPv4 addressing and subnetting
-- Trunk links between network devices
-- Inter-VLAN routing
-- Default gateways for end devices
+- Separate VLANs for IT, Administration and Sales
+- IPv4 subnetting using /27 networks
+- Access ports for end devices
+- 802.1Q trunking
+- Router-on-a-stick inter-VLAN routing
+- Default gateways for each VLAN
 - Connectivity verification
-- Basic access control where appropriate
-- Troubleshooting and validation
 
 ## Technologies
 
@@ -29,73 +28,106 @@ The network should provide:
 - Subnetting
 - VLANs
 - 802.1Q Trunking
+- Router-on-a-stick
 - Inter-VLAN Routing
-- Static / Default Routing
-- NAT
-- ACLs
 - ICMP
 - ARP
 
-## Planned Topology
+## Addressing Plan
 
-The exact topology will be documented once the implementation is complete.
+| VLAN | Department | Network | Gateway |
+|---|---|---|---|
+| 10 | IT | 192.168.50.0/27 | 192.168.50.1 |
+| 20 | ADMIN | 192.168.50.32/27 | 192.168.50.33 |
+| 30 | SALES | 192.168.50.64/27 | 192.168.50.65 |
 
-A possible structure is:
+Subnet mask: `255.255.255.224`
+
+## Topology
 
 ```text
-                    Internet / ISP
-                         |
-                       Router
-                         |
-                       Trunk
-                         |
-                       Switch
-              ___________|___________
-             |           |           |
-          VLAN 10     VLAN 20     VLAN 30
-             |           |           |
-            IT        Admin       Sales
+                      R1
+                      |
+                    TRUNK
+                      |
+                     SW1
+            __________|__________
+           |          |          |
+        VLAN 10    VLAN 20    VLAN 30
+           IT       ADMIN       SALES
+         PC1/PC2    PC3/PC4    PC5/PC6
 ```
 
-## Implementation Tasks
+## Repository Files
 
-- [ ] Define the network requirements
-- [ ] Create the IP addressing plan
-- [ ] Build the Packet Tracer topology
-- [ ] Configure VLANs
-- [ ] Configure access ports
-- [ ] Configure trunk links
-- [ ] Configure inter-VLAN routing
-- [ ] Configure end-device IP settings and default gateways
-- [ ] Configure routing as required
-- [ ] Configure NAT where applicable
-- [ ] Configure a basic ACL
-- [ ] Verify connectivity
-- [ ] Introduce and troubleshoot at least one configuration error
-- [ ] Add screenshots and relevant command outputs
-- [ ] Document findings and lessons learned
+The completed project should contain:
+
+```text
+cisco-packet-tracer-capstone/
+│
+├── README.md
+│
+├── packet-tracer/
+│   └── small-business-network.pkt
+│
+├── configs/
+│   ├── R1-running-config.txt
+│   └── SW1-running-config.txt
+│
+└── screenshots/
+    ├── 01-topology.png
+    ├── 02-vlan-brief.png
+    ├── 03-trunk.png
+    ├── 04-router-interfaces.png
+    ├── 05-routing-table.png
+    └── 06-intervlan-ping.png
+```
+
+## Implementation
+
+- [x] Define the network requirements
+- [x] Create the IP addressing plan
+- [x] Build the Packet Tracer topology
+- [x] Configure VLANs
+- [x] Configure access ports
+- [x] Configure trunk link
+- [x] Configure router-on-a-stick
+- [x] Configure inter-VLAN routing
+- [x] Configure end-device IP settings and default gateways
+- [x] Verify connectivity between VLANs
+- [ ] Export router and switch configurations
+- [ ] Add screenshots
+- [ ] Add Packet Tracer project file
+- [ ] Complete troubleshooting exercise
+- [ ] Document final lessons learned
 
 ## Verification Commands
 
-Examples of commands that may be used during the lab:
-
 ```text
-show ip interface brief
 show vlan brief
 show interfaces trunk
+show ip interface brief
 show ip route
 show running-config
-show access-lists
-show ip nat translations
 ping
-traceroute
 ```
+
+## Verification
+
+The network is considered successfully configured when:
+
+- Devices in the same VLAN can communicate.
+- Devices in different VLANs can communicate through R1.
+- Each PC uses the correct default gateway.
+- SW1 shows VLANs 10, 20 and 30 with the expected access ports.
+- The switch-to-router link operates as an 802.1Q trunk.
+- R1 shows the three configured subinterfaces and connected /27 networks.
 
 ## Troubleshooting Scenario
 
-At least one deliberate configuration issue will be introduced after the network is working.
+A deliberate configuration issue will be introduced in the next phase.
 
-The troubleshooting section will document:
+The investigation will document:
 
 - Symptom
 - Initial hypothesis
@@ -104,17 +136,6 @@ The troubleshooting section will document:
 - Corrective action
 - Final verification
 
-## Evidence
-
-Screenshots will be added for:
-
-- Final topology
-- VLAN configuration
-- Trunk configuration
-- Routing table
-- Successful connectivity tests
-- Troubleshooting evidence
-
 ## What I Learned
 
-To be completed after the project.
+To be completed after the troubleshooting phase.
